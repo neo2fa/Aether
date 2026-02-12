@@ -1,0 +1,13 @@
+Project Name: Aether
+Track: AI Agents / Open Society
+NEAR Leverage: Chain Signatures, MPC, Account Model
+
+Description:
+Aether is an AI-powered Omni-chain Treasurer. It solves the complexity of 
+multi-chain DeFi by using NEAR as a master controller. Users interact 
+with an AI agent that monitors yields and uses NEAR Chain Signatures to 
+execute transactions on Ethereum and other chains seamlessly. 
+
+Our project focuses on "One Job": Autonomous Yield Optimization with 
+verifiable on-chain execution.
+
