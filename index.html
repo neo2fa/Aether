@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aether AI | NEAR Omni-Chain</title>
+    <style>
+        body { background: #000; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: #111; border: 1px solid #333; padding: 2rem; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 0 20px rgba(0,255,150,0.1); }
+        h1 { color: #00ff96; margin-bottom: 0.5rem; }
+        input { width: 100%; padding: 12px; margin: 15px 0; background: #222; border: 1px solid #444; color: white; border-radius: 8px; box-sizing: border-box; }
+        button { background: #00ff96; color: #000; border: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; }
+        #status-board { margin-top: 20px; padding: 15px; background: #1a1a1a; border-radius: 10px; border-left: 4px solid #00ff96; text-align: left; font-size: 0.9rem; }
+        .loading { border: 2px solid #333; border-top: 2px solid #00ff96; border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Aether AI</h1>
+        <p style="font-size: 0.8rem; color: #888;">NEAR Omni-Chain Treasurer</p>
+        
+        <input type="text" id="intent" placeholder="Enter your goal (e.g. Maximize APY)">
+        <button onclick="runAI()">Execute AI Intent</button>
+
+        <div id="status-board" style="display:none;">
+            <div id="loader" class="loading"></div> <span id="log">Analyzing multi-chain liquidity...</span>
+            <p id="decision" style="margin-top:10px; color: #00ff96; font-weight: bold;"></p>
+        </div>
+    </div>
+
+    <script>
+        function runAI() {
+            const board = document.getElementById('status-board');
+            const log = document.getElementById('log');
+            const decision = document.getElementById('decision');
+            const loader = document.getElementById('loader');
+
+            board.style.display = 'block';
+            decision.innerText = "";
+            log.innerText = "Connecting to NEAR MPC Network...";
+
+            setTimeout(() => {
+                log.innerText = "Finding best yield on Ethereum, Arbitrum & NEAR...";
+            }, 1500);
+
+            setTimeout(() => {
+                loader.style.display = 'none';
+                log.innerText = "Strategy Confirmed:";
+                decision.innerText = "✅ Action: Move 500 USDC to Aave (ETH). Expected APY: 12.8%. Requesting NEAR Chain Signature...";
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
